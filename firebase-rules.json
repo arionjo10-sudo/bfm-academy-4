@@ -1,0 +1,31 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "inbox": {
+      ".read": "auth.token.email === 'director.bfmacademy@gmail.com'",
+      ".write": "auth.token.email === 'director.bfmacademy@gmail.com'",
+      "$uid": {
+        ".read": "auth.uid === $uid",
+        ".write": "auth.uid === $uid"
+      }
+    },
+    "outbox": {
+      ".read": "auth.token.email === 'director.bfmacademy@gmail.com'",
+      ".write": "auth.token.email === 'director.bfmacademy@gmail.com'",
+      "$uid": {
+        ".read": "auth.uid === $uid"
+      }
+    },
+    "state": {
+      "$uid": {
+        ".read": "auth.uid === $uid",
+        ".write": "auth.uid === $uid"
+      }
+    },
+    "pub": {
+      ".read": true,
+      ".write": "auth.token.email === 'director.bfmacademy@gmail.com'"
+    }
+  }
+}
